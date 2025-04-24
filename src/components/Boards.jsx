@@ -1,86 +1,80 @@
 import React from "react";
 
-const projectData = {
-  project: {
-    sections: [
+const projectSections = [
+  {
+    name: "To do",
+    tasks: [
       {
-        name: "To do",
-        tasks: [
-          {
-            priority: "HIGH",
-            image: "/planet.jpg",
-            title: "Update Website Homepage",
-            description:
-              "Revise the content and layout of the homepage to highlight new features and improve user engagement.",
-            users: ["/user1.jpg", "/user2.jpg"],
-          },
-        ],
-      },
-      {
-        name: "In progress",
-        tasks: [
-          {
-            priority: "LOW",
-            title: "Bug Fix - User Registration",
-            description:
-              "Investigate and resolve the reported bug in the user registration process where some users are unable to sign up.",
-            users: ["/user3.jpg"],
-          },
-          {
-            priority: "MEDIUM",
-            image: "/social.jpg",
-            title: "Social Media Campaign",
-            description:
-              "Plan and execute a social media campaign for the upcoming product launch in February.",
-            users: ["/user1.jpg", "/user2.jpg"],
-          },
-        ],
-      },
-      {
-        name: "Under Review",
-        tasks: [
-          {
-            priority: "HIGH",
-            title: "Mobile App Feature - Push Notifications",
-            description:
-              "Implement push notification feature for the mobile app to enhance user engagement. Ensure compatibility with both iOS and Android platforms.",
-            users: ["/user3.jpg"],
-          },
-        ],
-      },
-      {
-        name: "Done",
-        tasks: [
-          {
-            priority: "LOW",
-            title: "Content Creation - Blog Post",
-            description:
-              "Write and publish a blog post about industry trends and their impact on our products/services.",
-            users: ["/user3.jpg"],
-          },
-          {
-            priority: "MEDIUM",
-            image: "/security.jpg",
-            title: "IT Security Audit",
-            description:
-              "Write and publish a blog post about industry trends and their impact on our products/services.",
-            users: ["/user4.jpg"],
-          },
-        ],
+        priority: "HIGH",
+        image: "/image/img1.jpg",
+        title: "Update Website Homepage",
+        description:
+          "Revise the content and layout of the homepage to highlight new features and improve user engagement.",
+        users: ["/image/p1.jpg", "/image/p2.jpg"],
       },
     ],
   },
-};
+  {
+    name: "In progress",
+    tasks: [
+      {
+        priority: "LOW",
+        title: "Bug Fix - User Registration",
+        description:
+          "Investigate and resolve the reported bug in the user registration process where some users are unable to sign up.",
+        users: ["/image/p4.jpg"],
+      },
+      {
+        priority: "MEDIUM",
+        image: "/image/img2.jpg",
+        title: "Social Media Campaign",
+        description:
+          "Plan and execute a social media campaign for the upcoming product launch in February.",
+        users: ["/image/p3.jpg", "/image/p4.jpg"],
+      },
+    ],
+  },
+  {
+    name: "Under Review",
+    tasks: [
+      {
+        priority: "HIGH",
+        title: "Mobile App Feature - Push Notifications",
+        description:
+          "Implement push notification feature for the mobile app to enhance user engagement. Ensure compatibility with both iOS and Android platforms.",
+        users: ["/image/p5.jpg"],
+      },
+    ],
+  },
+  {
+    name: "Done",
+    tasks: [
+      {
+        priority: "LOW",
+        title: "Content Creation - Blog Post",
+        description:
+          "Write and publish a blog post about industry trends and their impact on our products/services.",
+        users: ["/image/p2.jpg"],
+      },
+      {
+        priority: "MEDIUM",
+        image: "/image/img3.jpg",
+        title: "IT Security Audit",
+        description:
+          "Write and publish a blog post about industry trends and their impact on our products/services.",
+        users: ["/image/p5.jpg"],
+      },
+    ],
+  },
+];
 
 export default function ProjectBoard() {
   return (
-    <div className="min-h-screen bg-gray-100 p-4 text-black">
+    <div className="min-h-screen bg-gray-300 p-4 text-black">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-xl font-semibold text-gray-700 mb-1">Project:</h1>
-
         <h2 className="text-3xl font-bold mt-6 mb-4">Boards</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {projectData.project.sections.map((section, sectionIndex) => (
+          {projectSections.map((section, sectionIndex) => (
             <div key={sectionIndex}>
               <h3 className="text-lg font-semibold mb-2">{section.name}</h3>
               <div className="space-y-4">
@@ -101,7 +95,7 @@ export default function ProjectBoard() {
                       <img
                         src={task.image}
                         alt="card"
-                        className="w-full h-32 object-cover rounded my-2"
+                        className="w-full h-32 object-cover rounded-2xl my-2"
                       />
                     )}
                     <h4 className="font-bold">{task.title}</h4>
